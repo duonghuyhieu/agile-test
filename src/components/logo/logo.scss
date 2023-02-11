@@ -1,0 +1,20 @@
+@import "../../variables";
+.logo {
+  width: 48.7px;
+  height: 34.78px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  &-1 {
+    width: 19.88px;
+    height: 19.88px;
+    border-radius: 20px;
+    background-color: $primary-color;
+  }
+  &-2 {
+    width: 19.88px;
+    height: 34.78px;
+    border-radius: 20px;
+    background-color: $second-color;
+  }
+}
