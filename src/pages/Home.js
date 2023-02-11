@@ -2,7 +2,7 @@ import React from "react";
 import "./Home.scss";
 import { Link } from "react-router-dom";
 import Logo from "../components/logo/logo";
-import { Image } from "../assets";
+import { featureDetail, Image } from "../assets";
 import FeatureDetail from "../components/featureDetail/featureDetail";
 function Home() {
   return (
@@ -43,7 +43,16 @@ function Home() {
             who store data in this Data Warehouse.
           </p>
           <div className="feature-content">
-            <FeatureDetail />
+            {featureDetail?.map((feature, index) => {
+              return (
+                <FeatureDetail
+                  ava={feature.ava}
+                  bg={feature.bg}
+                  heading={feature.heading}
+                  text={feature.text}
+                />
+              );
+            })}
           </div>
         </div>
         <div className="testimonials">
@@ -54,14 +63,16 @@ function Home() {
               <img
                 src={Image.avatar}
                 alt=""
-                className="testimonials-main-info-avatar "></img>
+                className="testimonials-main-info-avatar "
+              ></img>
               <div className="testimonials-main-info-des">
                 <h2>John Fang</h2>
                 <h3>wordfaang.com</h3>
                 <p>
                   Suspendisse ultrices at diam lectus nullam.
                   <br /> Nisl, sagittis viverra enim erat tortor ultricies
-                  <br /> massa turpis. Arcu pulvinar aenean nam laoreet <br />
+                  <br /> massa turpis. Arcu pulvinar aenean nam laoreet
+                  <br />
                   nulla.
                 </p>
               </div>
